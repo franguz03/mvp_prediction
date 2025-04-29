@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>mvp prediction</title>
+</head>
+<body>
+    <h1>Prediction</h1>
+    <form action="/predict" method="post">
+        {% for feature in pred_features %}
+            <label for="{{ feature }}">{{ feature }}</label><br>
+            <input type="text" id="{{ feature }}" name="{{ feature }}" required><br><br>
+        {% endfor %}
+        <input type="submit" value="Predecir">
+    </form>
+
+    {% if result != '' %}
+        <h2>Resultado: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>
